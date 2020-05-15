@@ -514,7 +514,7 @@ class App(object):
                 f.write(job.get_output(byte_range).read())
 
             whole_parts = job.archive_size // multipart_size
-            for first_byte in xrange(0, whole_parts * multipart_size,
+            for first_byte in range(0, whole_parts * multipart_size,
                                 multipart_size):
                 fetch(first_byte, first_byte + multipart_size)
             remainder = job.archive_size % multipart_size
